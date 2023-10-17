@@ -1,10 +1,10 @@
-name: despliegue en Hostinger
+name: Despliegue en Hostinger
 on:
   push:
     branches: 
       -main
 jobs:
-  buld:
+  build:
     name: build
     runs-on: ubuntu-latest
     steps:
@@ -17,4 +17,4 @@ jobs:
        script: |
                  cd /usr/local/lsws/Example/html/productly
                  git fetch origin main
-                 git reset --hart origin/main
+                 git reset --hard origin/main
