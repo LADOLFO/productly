@@ -15,6 +15,6 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-                   cd /usr/local/lsws/Example/html/productly
-                   git fetch origin main
-                   git reset --hard origin/main
+                  cd /usr/local/lsws/Example/html/productly
+                  git fetch origin main
+                  git reset --hard origin/main
