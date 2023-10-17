@@ -1,0 +1,20 @@
+name: despliegue en Hostinger
+on:
+  push:
+    branches: 
+      -main
+jobs:
+  buld:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+    -name: pull codigo en VPS
+     uses: appleboy/ssh-actions@master
+     with:
+       host: ${{ secrets.SSH_HOST }}
+       username: ${{ secrets.SSH_USER }}
+       key: ${{ secrets.SSH_KEY }}
+       script: |
+                 cd /usr/local/lsws/Example/html/productly
+                 git fetch origin main
+                 git reset --hart origin/main
